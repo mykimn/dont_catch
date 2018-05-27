@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameMethod1.unity
     guid: 4b4850dca665d6745be9455d72caabc0
+  - enabled: 1
+    path: Assets/Scenes/GameMethod2.unity
+    guid: 57b227a91663fa34da1c075b45819743
+  - enabled: 1
+    path: Assets/Scenes/GameMethod3.unity
+    guid: 9074f66a1deb1c543b4dedf01c79fa44
+  - enabled: 1
+    path: Assets/Scenes/GameStart.unity
+    guid: e733d6899fc35ae459715d424aa0bd90
   m_configObjects: {}

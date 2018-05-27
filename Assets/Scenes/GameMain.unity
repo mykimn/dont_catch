@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 413683632}
   - component: {fileID: 413683631}
   - component: {fileID: 413683636}
+  - component: {fileID: 413683637}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -411,6 +412,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b633d8b6fb81fbf4da6449452618be10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &413683637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 413683630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87f8bd8551d85d408932d19adff7848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &619430557
@@ -873,8 +885,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 413683631}
-        m_MethodName: goRanking
+      - m_Target: {fileID: 413683637}
+        m_MethodName: goGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
