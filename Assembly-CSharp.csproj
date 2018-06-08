@@ -58,10 +58,12 @@
      <Compile Include="Assets\Script\gameRanking.cs" />
      <Compile Include="Assets\Script\GameStart.cs" />
      <Compile Include="Assets\Script\goHome.cs" />
+     <Compile Include="Assets\Script\InitSundo.cs" />
      <Compile Include="Assets\Script\MainScirpt.cs" />
      <Compile Include="Assets\Script\Player_Move.cs" />
      <Compile Include="Assets\Script\RandomItem.cs" />
      <Compile Include="Assets\Script\sundo.cs" />
+     <Compile Include="Assets\sundo_make.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/좝쥐뫄/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

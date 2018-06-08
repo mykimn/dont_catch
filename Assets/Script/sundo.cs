@@ -5,6 +5,7 @@ using UnityEngine;
 public class sundo : MonoBehaviour {
 
     public static sundo Instance;
+
     private void Awake()
     {
         sundo.Instance = this;
