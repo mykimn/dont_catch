@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sundo : MonoBehaviour {
+public class sundo : MonoBehaviour
+{
 
     public static sundo Instance;
-
+    public GameObject gameObject;
+    public GameObject gameobject2;
     private void Awake()
     {
         sundo.Instance = this;
@@ -20,8 +22,9 @@ public class sundo : MonoBehaviour {
 
     void Start()
     {
+        gameobject2.SetActive(false);
         StartCoroutine(SundoRandom());
-        isSundoEmpty = false;
+        isSundoEmpty = true;
     }
 
     float GetRandomTime()
@@ -33,14 +36,18 @@ public class sundo : MonoBehaviour {
     {
         while (true)
         {
+            gameObject.SetActive(false);
+            gameobject2.SetActive(true);
             yield return new WaitForSeconds(GetRandomTime());
             s_Anim.SetTrigger("half1");
             yield return new WaitForSeconds(0.5f);
-            isSundoEmpty = true;
+            isSundoEmpty = false;
+            gameobject2.SetActive(false);
+            gameObject.SetActive(true);
             yield return new WaitForSeconds(GetRandomTime() * 0.5f);
             s_Anim.SetTrigger("half2");
             yield return new WaitForSeconds(0.5f);
-            isSundoEmpty = false;
+            isSundoEmpty = true;
         }
 
     }

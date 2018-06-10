@@ -57,11 +57,14 @@
      <Compile Include="Assets\Script\GameMethod4.cs" />
      <Compile Include="Assets\Script\gameRanking.cs" />
      <Compile Include="Assets\Script\GameStart.cs" />
+     <Compile Include="Assets\Script\Gauge.cs" />
      <Compile Include="Assets\Script\goHome.cs" />
      <Compile Include="Assets\Script\InitSundo.cs" />
      <Compile Include="Assets\Script\MainScirpt.cs" />
      <Compile Include="Assets\Script\Player_Move.cs" />
+     <Compile Include="Assets\Script\Player_Move2.cs" />
      <Compile Include="Assets\Script\RandomItem.cs" />
+     <Compile Include="Assets\Script\SFXMng.cs" />
      <Compile Include="Assets\Script\sundo.cs" />
      <Compile Include="Assets\sundo_make.cs" />
  <Reference Include="UnityEditor.StandardEvents">

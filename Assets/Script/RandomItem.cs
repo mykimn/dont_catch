@@ -47,7 +47,7 @@ public class RandomItem : MonoBehaviour {
 
         for (int i = 0; i < 8; i++)
         {
-            pos = new Vector2(Random.Range(-17, 17f), Random.Range(-2.5f, 2.5f));
+            pos = new Vector2(Random.Range(-6.5f, 6.5f), Random.Range(-4.7f, 0f));
             Instantiate(showitem[Random.Range(0, 12)], pos, Quaternion.identity);
         }
 

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player_Move : MonoBehaviour {
-
+public class Player_Move : MonoBehaviour
+{
+    bool isMoving;
+    bool SundoCheck;
+    public bool isPlayer;
+    Vector3 targetPos;
     // Use this for initialization
     void Start()
     {
@@ -14,7 +18,35 @@ public class Player_Move : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        isMoving = false;
         MoveObject();
+        if (isMoving)
+        {
+            if (sundo.Instance.isSundoEmpty && !SundoCheck && isPlayer)
+            {
+                Debug.Log("들킴");
+                Gauge.Instance.increaseGauge(false);
+                SundoCheck = true;
+            }
+            if (!sundo.Instance.
+                isSundoEmpty && SundoCheck)
+            {
+                SundoCheck = false;
+            }
+            //transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * moveSpeed);
+            /*if (transform.position == targetPos)
+            {
+                isMoving = false;
+                if (isPlayer)
+                {
+                    if (SundoCheck)
+                        SundoCheck = false;
+                    else
+                        //Gauge.Instance.increaseGauge(true);
+                        Debug.Log("게이지 늘리기");
+                }
+            }*/
+        }
     }
     void MoveObject()
     {
@@ -26,21 +58,25 @@ public class Player_Move : MonoBehaviour {
         {
             this.gameObject.transform.Translate(distanceX, 0, 0);
             changePlayer("left1");
+            isMoving = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow)) //오른쪽일 때
         {
             this.gameObject.transform.Translate(distanceX, 0, 0);
             changePlayer("right");
+            isMoving = true;
         }
         else if (Input.GetKey(KeyCode.UpArrow))//위일 때
         {
             this.gameObject.transform.Translate(0, distanceY, 0);
             changePlayer("back");
+            isMoving = true;
         }
         else if (Input.GetKey(KeyCode.DownArrow))//아래일 때
         {
             this.gameObject.transform.Translate(0, distanceY, 0);
             changePlayer("front");
+            isMoving = true;
         }
 
         //화면 안에서만 움직이게 하기
