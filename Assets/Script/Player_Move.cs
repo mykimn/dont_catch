@@ -5,19 +5,24 @@ using UnityEngine.UI;
 
 public class Player_Move : MonoBehaviour
 {
+    public static Player_Move instance;
     bool isMoving;
     public static bool SundoCheck;
     public bool isPlayer;
     Vector3 targetPos;
     GameObject Sundo = null;
     int sum = 0;
-    int cnt = 0;
+    public static int cnt = 0;
+    public static int score = 0;
     // Use this for initialization
     void Start()
     {
 
     }
-
+    public static int getScore()
+    {
+        return score;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -43,6 +48,7 @@ public class Player_Move : MonoBehaviour
         if (c.gameObject.tag == "GoodItem")
         {
             Destroy(c.gameObject);
+            cnt++;
         }
         else if (c.gameObject.tag == "BadItem")
         {
@@ -96,8 +102,10 @@ public class Player_Move : MonoBehaviour
 
         Vector3 pos_sundo = Sundo.gameObject.transform.position;
 
-        if (Input.GetKey(KeyCode.Space) && cnt >= 0 && pos.x > -0.8 && pos.x < 0.6)
+
+        if (Input.GetKey(KeyCode.Space) && cnt >= 20 && pos.x > -0.8 && pos.x < 0.6)
         {
+            Debug.Log(cnt + ",,,,,함수 들어옴!!");
             float su_y = pos_sundo.y;
             float y = pos.y;
             Vector3 target_sundo = new Vector3((float)0.13, (float)-3.2, 0);
@@ -110,8 +118,8 @@ public class Player_Move : MonoBehaviour
             this.gameObject.transform.position = Vector3.MoveTowards(start, target, speed + 50);
             Sundo.transform.position = Vector3.MoveTowards(start_sundo, target_sundo, speed + 50);
 
+            Invoke("resett", 0.3f);
 
-            Sundo.transform.position = new Vector3((float)0.13, (float)1.47);
         }
     }
     void changePlayer(string name)
@@ -120,5 +128,13 @@ public class Player_Move : MonoBehaviour
         spr = (Sprite)Resources.Load(name, typeof(Sprite));
         gameObject.GetComponent<SpriteRenderer>().sprite = spr;
 
+    }
+    void resett()
+    {
+        Sundo.transform.position = new Vector3((float)0.13, (float)1.47);
+        cnt = 0;
+        Debug.Log("0으로 초기화 했는데 과연....:" + cnt);
+        score++;
+        Debug.Log(score);
     }
 }

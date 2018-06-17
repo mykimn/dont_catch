@@ -25,8 +25,10 @@ public class Gauge : MonoBehaviour {
     {
         if(slider.fillAmount <= 0 && !isDead)
         {
-           // ReplayIm.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("GameOver").gameObject.SetActive(true);
+            Time.timeScale = 1;
             isDead = true;
+
         }
     }
 
